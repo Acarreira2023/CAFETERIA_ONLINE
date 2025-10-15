@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Coffe Store — Café en granos, molido y accesorios</title>
+  <meta name="description" content="Bienvenido a Tienda de Café, tu destino para los mejores granos de café y accesorios.">
+  <meta name="keywords" content="café, e-commerce, granos, expreso, cafetería">
+  <!--<link rel="canonical" href="https://tu-url-netlify.netlify.app/" /> -->
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Coffe Store — Café y accesorios" />
+  <meta property="og:description" content="Compra café de especialidad y accesorios, con carrito y envío." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:url" content="https://tu-dominio-o-netlify.app/" />
+
+  <!-- Favicons-->
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- SEO robots -->
+  <meta name="robots" content="index, follow" />
+</head>
+
+<body>
+  <!-- Accessibility skip -->
+  <a class="visually-hidden-focusable skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header shadow-sm">
+    <div class="container d-flex align-items-center justify-content-between py-3">
+      <a href="#inicio" class="brand d-flex align-items-center text-decoration-none">
+        <img src="assets/logo.svg" alt="Logo Tienda de Café" class="me-2" width="40" height="40" />
+        <span class="brand-title">Tienda de Café</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav-list d-flex gap-3 m-0 p-0">
+          <li><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li><a class="nav-link" href="#productos">Productos</a></li>
+          <li><a class="nav-link" href="#resenas">Reseñas</a></li>
+          <li><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li>
+            <button id="openCartBtn" class="btn btn-outline-light position-relative" aria-controls="cartOffcanvas" aria-expanded="false">
+              Carrito
+              <span id="cartCount" class="badge text-bg-warning position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Inicio / Hero -->
+    <section id="inicio" class="hero-section">
+      <div class="container py-5 d-flex flex-column flex-md-row align-items-center gap-4">
+        <div class="hero-copy flex-1">
+          <h1 class="display-5 fw-bold">Café de especialidad, cada mañana como un ritual.</h1>
+          <p class="lead">Elegí entre granos, molido y accesorios. Compra fácil con carrito persistente y envío en CABA y AMBA.</p>
+          <div class="d-flex gap-2">
+            <a href="#productos" class="btn btn-primary btn-lg">Ver productos</a>
+            <a href="#contacto" class="btn btn-outline-secondary btn-lg">Consultas</a>
+          </div>
+        </div>
+        <div class="hero-media flex-1">
+          <video class="rounded shadow-lg w-100" controls preload="metadata" aria-label="Video teaser de preparación de café">
+            <source src="assets/hero-teaser.mp4" type="video/mp4" />
+            Tu navegador no soporta video. Podés ver una imagen en su lugar.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos (Flexbox) -->
+    <section id="productos" class="products-section py-5">
+      <div class="container">
+        <header class="mb-4">
+          <h2 class="section-title">Productos</h2>
+          <p class="section-subtitle">Granos, molidos, cápsulas y accesorios. Datos desde API (JSON) y cards responsivas.</p>
+        </header>
+
+        <!-- Filtros simples -->
+        <div class="filters d-flex flex-wrap gap-2 mb-3">
+          <button class="btn btn-outline-dark" data-filter="all">Todos</button>
+          <button class="btn btn-outline-dark" data-filter="granos">Granos</button>
+          <button class="btn btn-outline-dark" data-filter="molido">Molido</button>
+          <button class="btn btn-outline-dark" data-filter="capsulas">Cápsulas</button>
+          <button class="btn btn-outline-dark" data-filter="accesorios">Accesorios</button>
+        </div>
+
+        <div id="productsGrid" class="d-flex flex-wrap gap-4" aria-live="polite" aria-busy="true">
+        </div>
+      </div>
+    </section>
+
+    <!-- Reseñas -->
+    <section id="resenas" class="reviews-section py-5">
+      <div class="container">
+        <header class="mb-4">
+          <h2 class="section-title">Reseñas</h2>
+          <p class="section-subtitle">Opiniones reales para elegir con confianza.</p>
+        </header>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <img src="assets/Martina.jpg" alt="Retrato de Martina, clienta" />
+            <div>
+              <h3 class="reviewer">Martina</h3>
+              <p class="review-text">“El Etiopía en granos es un viaje. Fresco y aromático, el envío llegó en 24 horas.”</p>
+            </div>
+          </article>
+          <article class="review-card">
+            <img src="assets/Lucas.jpg" alt="Retrato de Lucas, cliente" />
+            <div>
+              <h3 class="reviewer">Lucas</h3>
+              <p class="review-text">“El molido para V60 me salió perfecto. Las recomendaciones fueron precisas.”</p>
+            </div>
+          </article>
+          <article class="review-card">
+            <img src="assets/Sofia.jpg" alt="Retrato de Sofía, clienta" />
+            <div>
+              <h3 class="reviewer">Sofía</h3>
+              <p class="review-text">“El molinillo manual me cambió el juego. Sólido y ergonómico.”</p>
+            </div>
+          </article>
+          <article class="review-card">
+            <img src="assets/Diego.jpg" alt="Retrato de Diego, cliente" />
+            <div>
+              <h3 class="reviewer">Diego</h3>
+              <p class="review-text">“Probé las cápsulas compostables, excelente sabor y sin culpa.”</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto (Formspree) -->
+    <section id="contacto" class="contact-section py-5">
+      <div class="container">
+        <header class="mb-4">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">¿Dudas sobre molienda, origen o envíos? Escribinos.</p>
+        </header>
+
+        <form id="contactForm" class="contact-form row g-3" action="https://formspree.io/f/xeolyqdn" method="POST" novalidate>
+          <div class="col-md-6">
+            <label for="name" class="form-label">Nombre</label>
+            <input id="name" name="name" type="text" class="form-control" required aria-required="true" />
+            <div class="invalid-feedback">Por favor ingresá tu nombre.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input id="email" name="email" type="email" class="form-control" required aria-required="true" />
+            <div class="invalid-feedback">Ingresá un correo válido.</div>
+          </div>
+          <div class="col-12">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" rows="4" class="form-control" required aria-required="true"></textarea>
+            <div class="invalid-feedback">Escribí tu mensaje.</div>
+          </div>
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <span id="formStatus" role="status" class="text-muted"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="m-0">© 2025 Tienda de Café — Buenos Aires, Argentina</p>
+      <ul class="list-unstyled d-flex gap-3">
+        <li>
+          <a href="https://www.facebook.com/tu_pagina" target="_blank" class="footer-link">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/tu_usuario" target="_blank" class="footer-link">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/tu_usuario" target="_blank" class="footer-link">
+            <i class="fab fa-x-twitter fa-lg"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/tu_usuario" target="_blank" class="footer-link">
+            <i class="fab fa-telegram fa-lg"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Carrito (Offcanvas Bootstrap) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartLabel">
+    <div class="offcanvas-header">
+      <h5 id="cartLabel">Tu carrito</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cartItems" class="cart-items">
+        <!-- Render dinámico de carrito -->
+      </div>
+      <div class="cart-summary mt-3">
+        <p class="d-flex justify-content-between">
+          <span>Total:</span>
+          <strong id="cartTotal">$0</strong>
+        </p>
+        <button id="checkoutBtn" class="btn btn-success w-100">Simular compra</button>
+        <div id="checkoutStatus" class="text-muted mt-2" role="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
