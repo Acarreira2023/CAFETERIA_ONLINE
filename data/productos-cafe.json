@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nombre": "Café en Grano Tostato",
+    "descripcion": "Granos seleccionados de tueste oscuro para un sabor fuerte y profundo.",
+    "precio": 51291,
+    "imagen": "assets/productos/grano-tostato.jpg",
+    "oferta": true,
+    "precio_original": 56990
+  },
+  {
+    "id": 2,
+    "nombre": "Café Molido Suave",
+    "descripcion": "Mezcla suave y equilibrada, ideal para cafeteras de filtro.",
+    "precio": 12990,
+    "imagen": "assets/productos/molido-suave.jpg",
+    "oferta": false,
+    "precio_original": null
+  },
+  {
+    "id": 3,
+    "nombre": "Prensa Francesa 600ml",
+    "descripcion": "Accesorio clásico para preparar café con cuerpo y aroma.",
+    "precio": 15990,
+    "imagen": "assets/productos/prensa-francesa.jpg",
+    "oferta": true,
+    "precio_original": 18990
+  },
+  {
+    "id": 4,
+    "nombre": "Máquina Espresso Compacta",
+    "descripcion": "Máquina automática para espresso con diseño compacto.",
+    "precio": 89990,
+    "imagen": "assets/productos/maquina-compacta.jpg",
+    "oferta": false,
+    "precio_original": null
+  },
+  {
+    "id": 5,
+    "nombre": "Taza Cerámica 250ml",
+    "descripcion": "Taza artesanal de cerámica esmaltada, resistente al calor.",
+    "precio": 4990,
+    "imagen": "assets/productos/taza-ceramica.jpg",
+    "oferta": true,
+    "precio_original": 5990
+  },
+  {
+    "id": 6,
+    "nombre": "Café en Grano Orgánico",
+    "descripcion": "Granos orgánicos cultivados sin pesticidas, sabor natural.",
+    "precio": 20990,
+    "imagen": "assets/productos/grano-organico.jpg",
+    "oferta": false,
+    "precio_original": null
+  }
+]

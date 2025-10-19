@@ -1,238 +1,217 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Coffe Store — Café en granos, molido y accesorios</title>
-  <meta name="description" content="Bienvenido a Tienda de Café, tu destino para los mejores granos de café y accesorios.">
-  <meta name="keywords" content="café, e-commerce, granos, expreso, cafetería">
-  <!--<link rel="canonical" href="https://tu-url-netlify.netlify.app/" /> -->
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Coffe Store — Café y accesorios" />
-  <meta property="og:description" content="Compra café de especialidad y accesorios, con carrito y envío." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-image.jpg" />
-  <meta property="og:url" content="https://tu-dominio-o-netlify.app/" />
-
-  <!-- Favicons-->
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-  <!-- Google Fonts -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- SEO robots -->
-  <meta name="robots" content="index, follow" />
+  <meta charset="UTF-8">
+  <title>Tienda de Café</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <!-- Accessibility skip -->
-  <a class="visually-hidden-focusable skip-link" href="#main">Saltar al contenido</a>
 
-  <header class="site-header shadow-sm">
-    <div class="container d-flex align-items-center justify-content-between py-3">
-      <a href="#inicio" class="brand d-flex align-items-center text-decoration-none">
-        <img src="assets/logo.svg" alt="Logo Tienda de Café" class="me-2" width="40" height="40" />
-        <span class="brand-title">Tienda de Café</span>
+  <!---- Header ---->
+  <header class="site-header">
+    <nav class="container">
+      <a href="#inicio" class="brand">
+        <img src="assets/imagenes/logo1.jpg" alt="Logo Tienda de Café" class="logo">
+        <span>Tienda de Café</span>
       </a>
-
-      <nav class="nav" aria-label="Navegación principal">
-        <ul class="nav-list d-flex gap-3 m-0 p-0">
-          <li><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li><a class="nav-link" href="#productos">Productos</a></li>
-          <li><a class="nav-link" href="#resenas">Reseñas</a></li>
-          <li><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li>
-            <button id="openCartBtn" class="btn btn-outline-light position-relative" aria-controls="cartOffcanvas" aria-expanded="false">
-              Carrito
-              <span id="cartCount" class="badge text-bg-warning position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="actions">
+        <button class="btn-login">Ingresar</button>
+        <button class="btn-signup">Crear Cuenta</button>
+        <button class="btn-cart" onclick="document.querySelector('.cart-drawer').classList.add('open')">
+          🛒 <span class="cart-count">1</span>
+        </button>
+        <button class="btn-menu">☰</button>
+      </div>
+    </nav>
   </header>
 
-  <main id="main">
-    <!-- Inicio / Hero -->
-    <section id="inicio" class="hero-section">
-      <div class="container py-5 d-flex flex-column flex-md-row align-items-center gap-4">
-        <div class="hero-copy flex-1">
-          <h1 class="display-5 fw-bold">Café de especialidad, cada mañana como un ritual.</h1>
-          <p class="lead">Elegí entre granos, molido y accesorios. Compra fácil con carrito persistente y envío en CABA y AMBA.</p>
-          <div class="d-flex gap-2">
-            <a href="#productos" class="btn btn-primary btn-lg">Ver productos</a>
-            <a href="#contacto" class="btn btn-outline-secondary btn-lg">Consultas</a>
-          </div>
-        </div>
-        <div class="hero-media flex-1">
-          <video class="rounded shadow-lg w-100" controls preload="metadata" aria-label="Video teaser de preparación de café">
-            <source src="assets/hero-teaser.mp4" type="video/mp4" />
-            Tu navegador no soporta video. Podés ver una imagen en su lugar.
-          </video>
-        </div>
+  <!---- Hero ---->
+  <section id="inicio" class="hero">
+    <video class="hero-video" autoplay loop muted poster="assets/imagenes/coffee.jpg">
+      <source src="assets/videos/Proceso del cafe.mp4" type="video/mp4">
+      <track src="assets/videos/Proceso del cafe.vtt" kind="subtitles" srclang="es" label="Español" default>
+      Tu navegador no soporta el video.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>El Mejor Café, directo a tu puerta</h1>
+      <p>Explora nuestra selección curada de granos de café, accesorios y máquinas para crear tu experiencia perfecta.</p>
+      <a href="#productos" class="btn-primary">Ver Productos</a>
+    </div>
+  </section>
+
+  <!---- Productos ---->
+  <section id="productos" class="products-section">
+    <h2 class="section-title">Nuestra Selección de Productos</h2>
+
+    <!-- Filtros -->
+    <div class="search-filter">
+      <!-- Buscador -->
+      <input type="text" placeholder="Buscar producto..." class="search-input">
+
+      <!-- Orden -->
+      <select class="sort-select">
+        <option value="relevancia">Relevancia</option>
+        <option value="precio-asc">Precio: Menor a Mayor</option>
+        <option value="precio-desc">Precio: Mayor a Menor</option>
+      </select>
+
+      <!-- Categorías -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="todos">Todos</button>
+        <button class="filter-btn" data-category="oferta">Con Descuento</button>
+        <button class="filter-btn" data-category="cafe">Café</button>
+        <button class="filter-btn" data-category="accesorios">Accesorios</button>
+        <button class="filter-btn" data-category="maquinas">Máquinas</button>
       </div>
-    </section>
+    </div>
 
-    <!-- Productos (Flexbox) -->
-    <section id="productos" class="products-section py-5">
-      <div class="container">
-        <header class="mb-4">
-          <h2 class="section-title">Productos</h2>
-          <p class="section-subtitle">Granos, molidos, cápsulas y accesorios. Datos desde API (JSON) y cards responsivas.</p>
-        </header>
+    <!-- Contenedor dinámico de productos -->
+    <div class="products-grid">
 
-        <!-- Filtros simples -->
-        <div class="filters d-flex flex-wrap gap-2 mb-3">
-          <button class="btn btn-outline-dark" data-filter="all">Todos</button>
-          <button class="btn btn-outline-dark" data-filter="granos">Granos</button>
-          <button class="btn btn-outline-dark" data-filter="molido">Molido</button>
-          <button class="btn btn-outline-dark" data-filter="capsulas">Cápsulas</button>
-          <button class="btn btn-outline-dark" data-filter="accesorios">Accesorios</button>
-        </div>
+    </div>
 
-        <div id="productsGrid" class="d-flex flex-wrap gap-4" aria-live="polite" aria-busy="true">
-        </div>
+    <!-- Template oculto para clonar -->
+    <template id="producto-template">
+      <article class="product-card">
+        <img src="" alt="" class="product-img">
+        <h3 class="product-title"></h3>
+        <p class="product-description"></p>
+        <p class="product-price"></p>
+        <button class="btn-add">Agregar al carrito</button>
+      </article>
+    </template>
+  </section>
+
+
+
+  <!---- Reseñas ---->
+  <section id="reseñas" class="reviews-section">
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <img src="assets/imagenes/Diego.jpg" alt="Diego">
+        <p>"El mejor café que probé en mi vida. Entrega rápida y excelente atención."</p>
+        <h4>Diego</h4>
       </div>
-    </section>
-
-    <!-- Reseñas -->
-    <section id="resenas" class="reviews-section py-5">
-      <div class="container">
-        <header class="mb-4">
-          <h2 class="section-title">Reseñas</h2>
-          <p class="section-subtitle">Opiniones reales para elegir con confianza.</p>
-        </header>
-
-        <div class="reviews-grid">
-          <article class="review-card">
-            <img src="assets/Martina.jpg" alt="Retrato de Martina, clienta" />
-            <div>
-              <h3 class="reviewer">Martina</h3>
-              <p class="review-text">“El Etiopía en granos es un viaje. Fresco y aromático, el envío llegó en 24 horas.”</p>
-            </div>
-          </article>
-          <article class="review-card">
-            <img src="assets/Lucas.jpg" alt="Retrato de Lucas, cliente" />
-            <div>
-              <h3 class="reviewer">Lucas</h3>
-              <p class="review-text">“El molido para V60 me salió perfecto. Las recomendaciones fueron precisas.”</p>
-            </div>
-          </article>
-          <article class="review-card">
-            <img src="assets/Sofia.jpg" alt="Retrato de Sofía, clienta" />
-            <div>
-              <h3 class="reviewer">Sofía</h3>
-              <p class="review-text">“El molinillo manual me cambió el juego. Sólido y ergonómico.”</p>
-            </div>
-          </article>
-          <article class="review-card">
-            <img src="assets/Diego.jpg" alt="Retrato de Diego, cliente" />
-            <div>
-              <h3 class="reviewer">Diego</h3>
-              <p class="review-text">“Probé las cápsulas compostables, excelente sabor y sin culpa.”</p>
-            </div>
-          </article>
-        </div>
+      <div class="review-card">
+        <img src="assets/imagenes/Lucas.jpg" alt="Lucas">
+        <p>"Gran variedad de granos y accesorios. Muy recomendable."</p>
+        <h4>Lucas</h4>
       </div>
-    </section>
-
-    <!-- Contacto (Formspree) -->
-    <section id="contacto" class="contact-section py-5">
-      <div class="container">
-        <header class="mb-4">
-          <h2 class="section-title">Contacto</h2>
-          <p class="section-subtitle">¿Dudas sobre molienda, origen o envíos? Escribinos.</p>
-        </header>
-
-        <form id="contactForm" class="contact-form row g-3" action="https://formspree.io/f/xeolyqdn" method="POST" novalidate>
-          <div class="col-md-6">
-            <label for="name" class="form-label">Nombre</label>
-            <input id="name" name="name" type="text" class="form-control" required aria-required="true" />
-            <div class="invalid-feedback">Por favor ingresá tu nombre.</div>
-          </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input id="email" name="email" type="email" class="form-control" required aria-required="true" />
-            <div class="invalid-feedback">Ingresá un correo válido.</div>
-          </div>
-          <div class="col-12">
-            <label for="message" class="form-label">Mensaje</label>
-            <textarea id="message" name="message" rows="4" class="form-control" required aria-required="true"></textarea>
-            <div class="invalid-feedback">Escribí tu mensaje.</div>
-          </div>
-          <div class="col-12 d-flex justify-content-between align-items-center">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <span id="formStatus" role="status" class="text-muted"></span>
-          </div>
-        </form>
+      <div class="review-card">
+        <img src="assets/imagenes/Martina.jpg" alt="Martina">
+        <p>"Me encantó la experiencia de compra, todo muy fácil y rápido."</p>
+        <h4>Martina</h4>
       </div>
-    </section>
-  </main>
+      <div class="review-card">
+        <img src="assets/imagenes/Sofia.jpg" alt="Sofía">
+        <p>"Excelente calidad y presentación. ¡Ya soy cliente fiel!"</p>
+        <h4>Sofía</h4>
+      </div>
+    </div>
+  </section>
 
-  <footer class="site-footer py-4">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-      <p class="m-0">© 2025 Tienda de Café — Buenos Aires, Argentina</p>
-      <ul class="list-unstyled d-flex gap-3">
-        <li>
-          <a href="https://www.facebook.com/tu_pagina" target="_blank" class="footer-link">
-            <i class="fab fa-facebook fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/tu_usuario" target="_blank" class="footer-link">
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/tu_usuario" target="_blank" class="footer-link">
-            <i class="fab fa-x-twitter fa-lg"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://t.me/tu_usuario" target="_blank" class="footer-link">
-            <i class="fab fa-telegram fa-lg"></i>
-          </a>
-        </li>
-      </ul>
+  <!---- Contacto ---->
+  <section id="contacto" class="contact-section">
+    <h2 class="section-title">Ponte en Contacto</h2>
+    <p class="section-subtitle">¿Tienes alguna pregunta o simplemente quieres saludar? ¡Escríbenos!</p>
+    <form action="https://formspree.io/f/xeolyqdn" method="POST" class="contact-form">
+      <label for="name">Nombre Completo</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit" class="btn-submit">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!---- Footer ---->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Tienda de Café — Buenos Aires, Argentina</p>
+      <div class="social-links">
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <!-- Twitter -->
+        <a href="#" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.9 3 7.1 
+                    0 .8-.4 1.5-.9 2.2-1 .9-2.2 1.4-3.4 1.4h-2.8
+                    c-1.3 0-2.5-.5-3.4-1.4-.9-.9-1.4-2-1.4-3.4v-.3
+                    c0-1.2.6-2.3 1.6-3.1 1.3-1 2.8-1.5 4.3-1.5h.3
+                    c.6 0 1.2-.2 1.7-.5.8-.5 1.6-1.2 2.4-2.1
+                    .9-1.1 1.8-2.4 2.8-4 .2-.3.4-.6.6-.9z"/>
+          </svg>
+        </a>
+        <!-- Telegram -->
+        <a href="#" aria-label="Telegram">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 3.5 2.5 10.5c-.7.3-.7 1.3 0 1.6l4.7 1.9 2 6.3c.2.6 1 .8 1.5.3l3-3 4.8 3.5c.5.4 1.3.1 1.5-.5l3.5-15c.2-.7-.5-1.3-1.2-1z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
-  <!-- Carrito (Offcanvas Bootstrap) -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartLabel">
-    <div class="offcanvas-header">
-      <h5 id="cartLabel">Tu carrito</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div id="cartItems" class="cart-items">
-        <!-- Render dinámico de carrito -->
-      </div>
-      <div class="cart-summary mt-3">
-        <p class="d-flex justify-content-between">
-          <span>Total:</span>
-          <strong id="cartTotal">$0</strong>
-        </p>
-        <button id="checkoutBtn" class="btn btn-success w-100">Simular compra</button>
-        <div id="checkoutStatus" class="text-muted mt-2" role="status"></div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+
+  <!---- Carrito ---->
+  <aside class="cart-drawer">
+    <header class="cart-header">
+      <h2>Tu Carrito</h2>
+      <button class="cart-close" onclick="document.querySelector('.cart-drawer').classList.remove('open')">✖</button>
+    </header>
+    <div class="cart-body">
+      <div class="cart-item">
+        <img src="assets/imagenes/producto1.jpg" alt="Café Bonafide En Grano Bolsa X 1kg">
+        <div class="cart-info">
+          <h4>Café Bonafide En Grano Bolsa X 1kg</h4>
+          <p class="unit-price">$51291</p>
+          <div class="quantity-controls">
+            <button class="qty-btn">−</button>
+            <span class="qty">1</span>
+            <button class="qty-btn">+</button>
+          </div>
+        </div>
+        <div class="cart-subtotal"><p>$51291</p></div>
+        <button class="remove-btn">🗑</button>
+      </div>
+    </div>
+    <footer class="cart-footer">
+      <div class="cart-total"><span>Subtotal:</span><strong>$51291</strong></div>
+      <button class="btn-checkout">💳 Pagar</button>
+      <button class="btn-clear">🗑 Vaciar Carrito</button>
+    </footer>
+  </aside>
+  <div class="cart-overlay" onclick="document.querySelector('.cart-drawer').classList.remove('open')"></div>
+
 </body>
 </html>
