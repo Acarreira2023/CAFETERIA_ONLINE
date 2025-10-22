@@ -1,56 +1,92 @@
 [
   {
     "id": 1,
-    "nombre": "Café en Grano Tostato",
+    "nombre": "Café en Grano Tostado",
     "descripcion": "Granos seleccionados de tueste oscuro para un sabor fuerte y profundo.",
     "precio": 51291,
-    "imagen": "assets/productos/grano-tostato.jpg",
-    "oferta": true,
-    "precio_original": 56990
+    "precio_original": 56990,
+    "imagen": "assets/productos/grano-tostado.jpg",
+    "categoria": "cafe",
+    "oferta": true
   },
   {
     "id": 2,
     "nombre": "Café Molido Suave",
     "descripcion": "Mezcla suave y equilibrada, ideal para cafeteras de filtro.",
     "precio": 12990,
-    "imagen": "assets/productos/molido-suave.jpg",
-    "oferta": false,
-    "precio_original": null
+    "precio_original": null,
+    "imagen": "assets/productos/grano-tostado1.png",
+    "categoria": "cafe",
+    "oferta": false
   },
   {
     "id": 3,
-    "nombre": "Prensa Francesa 600ml",
-    "descripcion": "Accesorio clásico para preparar café con cuerpo y aroma.",
-    "precio": 15990,
-    "imagen": "assets/productos/prensa-francesa.jpg",
-    "oferta": true,
-    "precio_original": 18990
-  },
-  {
-    "id": 4,
-    "nombre": "Máquina Espresso Compacta",
-    "descripcion": "Máquina automática para espresso con diseño compacto.",
-    "precio": 89990,
-    "imagen": "assets/productos/maquina-compacta.jpg",
-    "oferta": false,
-    "precio_original": null
-  },
-  {
-    "id": 5,
-    "nombre": "Taza Cerámica 250ml",
-    "descripcion": "Taza artesanal de cerámica esmaltada, resistente al calor.",
-    "precio": 4990,
-    "imagen": "assets/productos/taza-ceramica.jpg",
-    "oferta": true,
-    "precio_original": 5990
-  },
-  {
-    "id": 6,
     "nombre": "Café en Grano Orgánico",
     "descripcion": "Granos orgánicos cultivados sin pesticidas, sabor natural.",
     "precio": 20990,
+    "precio_original": null,
     "imagen": "assets/productos/grano-organico.jpg",
-    "oferta": false,
-    "precio_original": null
+    "categoria": "cafe",
+    "oferta": false
+  },
+  {
+    "id": 4,
+    "nombre": "Café Espresso Italiano",
+    "descripcion": "Mezcla premium de granos arábica con tueste medio, perfecto para espresso.",
+    "precio": 18990,
+    "precio_original": 22990,
+    "imagen": "assets/productos/espresso-italiano.jpg",
+    "categoria": "cafe",
+    "oferta": true
+  },
+  {
+    "id": 5,
+    "nombre": "Prensa Francesa 600ml",
+    "descripcion": "Accesorio clásico para preparar café con cuerpo y aroma.",
+    "precio": 15990,
+    "precio_original": 18990,
+    "imagen": "assets/productos/prensa-francesa.jpg",
+    "categoria": "accesorios",
+    "oferta": true
+  },
+  {
+    "id": 6,
+    "nombre": "Taza Cerámica 250ml",
+    "descripcion": "Taza artesanal de cerámica esmaltada, resistente al calor.",
+    "precio": 4990,
+    "precio_original": 5990,
+    "imagen": "assets/productos/taza-ceramica.jpg",
+    "categoria": "accesorios",
+    "oferta": true
+  },
+  {
+    "id": 7,
+    "nombre": "Filtros de Papel V60",
+    "descripcion": "Pack de 100 filtros de papel para método V60, blanqueados sin cloro.",
+    "precio": 3990,
+    "precio_original": null,
+    "imagen": "assets/productos/filtros-v60.jpg",
+    "categoria": "accesorios",
+    "oferta": false
+  },
+  {
+    "id": 8,
+    "nombre": "Máquina Espresso Compacta",
+    "descripcion": "Máquina automática para espresso con diseño compacto.",
+    "precio": 89990,
+    "precio_original": null,
+    "imagen": "assets/productos/maquina-compacta.jpg",
+    "categoria": "maquinas",
+    "oferta": false
+  },
+  {
+    "id": 9,
+    "nombre": "Cafetera Italiana Moka 6 Tazas",
+    "descripcion": "Clásica cafetera de aluminio para preparar café tradicional italiano.",
+    "precio": 24990,
+    "precio_original": 29990,
+    "imagen": "assets/productos/moka-italiana.jpg",
+    "categoria": "maquinas",
+    "oferta": true
   }
 ]
