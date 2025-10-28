@@ -360,6 +360,7 @@ img {
   height: 500px;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   animation: fadeIn 0.5s ease;
 }
