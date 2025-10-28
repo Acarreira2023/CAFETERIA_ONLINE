@@ -93,8 +93,8 @@
     "id": 10,
     "nombre": "Cafetera Genio S Plus Nescafe",
     "descripcion": "Cafetera compacta y elegante con tecnología de cápsulas, con ajuste de intensidad.",
-    "precio": 317590,
-    "precio_original": 254072,
+    "precio": 254072,
+    "precio_original": 317590,
     "imagen": "assets/productos/Cafetera-Genio-S-Plus-Nescafe.jpg",
     "categoria": "maquinas",
     "oferta": true
