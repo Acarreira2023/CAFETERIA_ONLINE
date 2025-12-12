@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" as="style" onload="this.rel='stylesheet'">
   <noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   </noscript>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -42,33 +42,28 @@
 
   <!---- Hero ---->
   <section id="inicio" class="hero">
-    <video class="hero-video" controls autoplay loop playsinline poster="assets/imagenes/coffee.jpg">
-      <source src="assets/videos/Proceso del cafe.mp4" type="video/mp4">
-      <track src="assets/videos/Proceso del cafe.vtt" kind="subtitles" srclang="es" label="Español" default>
-      Tu navegador no soporta el video.
-    </video>
+    <div class="hero-container">
+      <video class="hero-video" controls playsinline preload="metadata" poster="assets/imagenes/coffee.jpg">
+        <source src="assets/videos/Proceso del cafe.mp4" type="video/mp4">
+        <track src="assets/videos/Proceso del cafe.vtt" kind="subtitles" srclang="es" label="Español" default>
+        Tu navegador no soporta el video.
+      </video>
+    </div>
   </section>
 
   <!---- Productos ---->
   <section id="productos" class="products-section">
     <h2 class="section-title">Nuestra Selección de Productos</h2>
-
     <!-- Filtros -->
     <div class="search-filter">
-      <!-- Buscador y Orden en misma línea -->
       <div class="search-sort-row">
-        <!-- Buscador -->
         <input type="text" placeholder="Buscar producto..." class="search-input" aria-label="Buscar productos">
-
-        <!-- Orden -->
         <select class="sort-select" aria-label="Ordenar productos">
           <option value="relevancia">Relevancia</option>
           <option value="precio-asc">Precio: Menor a Mayor</option>
           <option value="precio-desc">Precio: Mayor a Menor</option>
         </select>
       </div>
-
-      <!-- Categorías -->
       <div class="filter-buttons" role="group" aria-label="Filtrar por categoría">
         <button class="filter-btn active" data-category="todos">Todos</button>
         <button class="filter-btn" data-category="oferta">Con Descuento</button>
@@ -77,37 +72,65 @@
         <button class="filter-btn" data-category="maquinas">Máquinas</button>
       </div>
     </div>
-
-    <!-- Contenedor dinámico de productos -->
-    <div class="products-grid">
-      <!-- Los productos se cargarán aquí con JS -->
-    </div>
+    <div class="products-grid"></div>
   </section>
 
   <!---- Reseñas ---->
   <section id="reseñas" class="reviews-section">
     <h2 class="section-title">Lo que dicen nuestros clientes</h2>
     <div class="reviews-grid">
+      
       <article class="review-card">
         <img src="assets/imagenes/Diego.jpg" alt="Foto de Diego" loading="lazy">
         <p>"El mejor café que probé en mi vida. Entrega rápida y excelente atención."</p>
+        <div class="review-stars" aria-label="5 de 5 estrellas">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
         <h4>Diego</h4>
       </article>
+
       <article class="review-card">
         <img src="assets/imagenes/Lucas.jpg" alt="Foto de Lucas" loading="lazy">
         <p>"Gran variedad de granos y accesorios. Muy recomendable."</p>
+        <div class="review-stars" aria-label="4 de 5 estrellas">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
         <h4>Lucas</h4>
       </article>
+
       <article class="review-card">
         <img src="assets/imagenes/Martina.jpg" alt="Foto de Martina" loading="lazy">
         <p>"Me encantó la experiencia de compra, todo muy fácil y rápido."</p>
+        <div class="review-stars" aria-label="5 de 5 estrellas">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
         <h4>Martina</h4>
       </article>
+
       <article class="review-card">
         <img src="assets/imagenes/Sofia.jpg" alt="Foto de Sofía" loading="lazy">
         <p>"Excelente calidad y presentación. ¡Ya soy cliente fiel!"</p>
+        <div class="review-stars" aria-label="5 de 5 estrellas">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        </div>
         <h4>Sofía</h4>
       </article>
+
     </div>
   </section>
 
@@ -118,13 +141,10 @@
     <form action="https://formspree.io/f/xeolyqdn" method="POST" class="contact-form">
       <label for="name">Nombre Completo</label>
       <input type="text" id="name" name="name" required aria-required="true" placeholder="Tu nombre">
-      
       <label for="email">Correo Electrónico</label>
       <input type="email" id="email" name="email" required aria-required="true" placeholder="tu@email.com">
-      
       <label for="message">Mensaje</label>
       <textarea id="message" name="message" rows="4" required aria-required="true" placeholder="Escribe tu mensaje aquí..."></textarea>
-      
       <button type="submit" class="btn-submit">Enviar Mensaje</button>
     </form>
   </section>
@@ -133,6 +153,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <p>&copy; 2025 Tienda de Café — Buenos Aires, Argentina</p>
+      <p class="credit">Sitio creado por Aníbal Carreira</p>
       <ul class="social-links">
         <li>
           <a href="https://www.facebook.com/tu_pagina" aria-label="Visitar Facebook" target="_blank" rel="noopener noreferrer">
@@ -175,11 +196,7 @@
       <h2 id="cart-title">Tu Carrito</h2>
       <button class="cart-close" onclick="document.querySelector('.cart-drawer').classList.remove('open')" aria-label="Cerrar carrito">✖</button>
     </header>
-    <div class="cart-body">
-      <div class="cart-empty">
-        <p>Tu carrito está vacío</p>
-      </div>
-    </div>
+    <div class="cart-body"></div>
     <footer class="cart-footer">
       <div class="cart-total"><span>Subtotal:</span><strong>$0</strong></div>
       <button class="btn-checkout">💳 Pagar</button>

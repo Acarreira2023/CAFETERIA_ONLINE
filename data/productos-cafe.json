@@ -108,5 +108,15 @@
     "imagen": "assets/productos/Capsulas-dolce-gusto.jpg",
     "categoria": "cafe",
     "oferta": true
+  },
+  {
+    "id": 12,
+    "nombre": "Café Saquitos Bonafide",
+    "descripcion": "Café en saquitos de 25g, ideal para preparar una taza rápida y deliciosa.",
+    "precio":6750,
+    "precio_original": null,
+    "imagen": "assets/productos/Cafe-en-sobres.jpg",
+    "categoria": "cafe",
+    "oferta": false
   }
 ]
