@@ -183,6 +183,27 @@ img {
   object-fit: cover;
 }
 
+/* ====== Acerca de ====== */
+
+.about-section {
+  background: #fff;
+  padding: 3rem 1rem;
+}
+
+.about-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+
 /* ====== Productos ====== */
 .products-section {
   background: #f5f5f5;
