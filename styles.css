@@ -196,6 +196,16 @@ img {
   text-align: center;
 }
 
+.about-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
 .about-text {
   font-size: 1rem;
   color: #555;
